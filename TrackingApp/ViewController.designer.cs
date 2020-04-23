@@ -14,5 +14,25 @@ namespace TrackingApp
     [Register ("ViewController")]
     partial class ViewController
     {
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton ClickButton { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIView Hello { get; set; }
+
+        void ReleaseDesignerOutlets ()
+        {
+            if (ClickButton != null) {
+                ClickButton.Dispose ();
+                ClickButton = null;
+            }
+
+            if (Hello != null) {
+                Hello.Dispose ();
+                Hello = null;
+            }
+        }
     }
 }

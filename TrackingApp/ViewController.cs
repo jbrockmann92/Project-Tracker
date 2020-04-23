@@ -6,6 +6,8 @@ namespace TrackingApp
 {
     public partial class ViewController : UIViewController
     {
+        int counter = 0;
+
         public ViewController (IntPtr handle) : base (handle)
         {
         }
@@ -13,7 +15,14 @@ namespace TrackingApp
         public override void ViewDidLoad ()
         {
             base.ViewDidLoad ();
-            // Perform any additional setup after loading the view, typically from a nib.
+
+            ClickButton.TouchUpInside += ClickButton_TouchUpInside;
+        }
+
+        private void ClickButton_TouchUpInside(object sender, EventArgs e)
+        {
+            counter++;
+            ClickButton.SetTitle($"You Tapped The Button {counter} times!", UIControlState.Normal);
         }
 
         public override void DidReceiveMemoryWarning ()
