@@ -132,6 +132,10 @@
     <Compile Include="MainViewController.designer.cs">
       <DependentUpon>MainViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProjectViewController.cs" />
+    <Compile Include="ProjectViewController.designer.cs">
+      <DependentUpon>ProjectViewController.cs</DependentUpon>
+    </Compile>
     <Compile Include="SceneDelegate.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

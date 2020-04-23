@@ -17,12 +17,13 @@ namespace TrackingApp
             base.ViewDidLoad();
 
             ClickButton.TouchUpInside += IncrementButton_TouchUpInside;
+
         }
 
         public void IncrementButton_TouchUpInside(object sender, EventArgs e)
         {
-            counter++;
-            ClickButton.SetTitle($"You've clicked {counter} times!", UIControlState.Normal);
+            ProjectViewController project = this.Storyboard.InstantiateViewController("ProjectViewController") as ProjectViewController;
+            this.NavigationController.PushViewController(project, true);
         }
 
     }
