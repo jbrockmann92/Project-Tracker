@@ -16,13 +16,14 @@ namespace TrackingApp
         {
             base.ViewDidLoad();
 
-            IncrementButton.TouchUpInside += IncrementButton_TouchUpInside;
+            ClickButton.TouchUpInside += IncrementButton_TouchUpInside;
         }
 
         public void IncrementButton_TouchUpInside(object sender, EventArgs e)
         {
             counter++;
-            IncrementButton.SetTitle($"You've clicked {counter} times!", UIControlState.Normal);
+            ClickButton.SetTitle($"You've clicked {counter} times!", UIControlState.Normal);
         }
+
     }
 }
