@@ -14,7 +14,7 @@ namespace TrackingApp
         {
             base.ViewDidLoad();
 
-            ProjectName.Text = "This Project";
+            ProjectName.Text = "This Project"; //Can change to the right name here. When API call is working and JSON is formatted correctly
         }
     }
 }

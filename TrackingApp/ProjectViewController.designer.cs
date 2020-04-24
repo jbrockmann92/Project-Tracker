@@ -18,11 +18,20 @@ namespace TrackingApp
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel ProjectName { get; set; }
 
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel ProjectNumber { get; set; }
+
         void ReleaseDesignerOutlets ()
         {
             if (ProjectName != null) {
                 ProjectName.Dispose ();
                 ProjectName = null;
+            }
+
+            if (ProjectNumber != null) {
+                ProjectNumber.Dispose ();
+                ProjectNumber = null;
             }
         }
     }
