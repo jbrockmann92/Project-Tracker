@@ -1,5 +1,6 @@
 using Foundation;
 using System;
+using System.Net.Http;
 using UIKit;
 
 namespace TrackingApp
@@ -10,9 +11,14 @@ namespace TrackingApp
         {
         }
 
-        public override void ViewDidLoad()
+        public async override void ViewDidLoad()
         {
             base.ViewDidLoad();
+
+            HttpClient client = new HttpClient();
+
+            var response = client.GetAsync("https://localhost:44322/api/home");
+            Console.WriteLine(response);
 
             ProjectName.Text = "This Project"; //Can change to the right name here. When API call is working and JSON is formatted correctly
             ReceiptsButton.TouchUpInside += ReceiptsButton_TouchUpInside;
