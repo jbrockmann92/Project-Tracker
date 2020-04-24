@@ -16,22 +16,22 @@ namespace TrackingApp
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton ClickButton { get; set; }
+        UIKit.UIView Hello { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIView Hello { get; set; }
+        UIKit.UIButton Project1Button { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
-            if (ClickButton != null) {
-                ClickButton.Dispose ();
-                ClickButton = null;
-            }
-
             if (Hello != null) {
                 Hello.Dispose ();
                 Hello = null;
+            }
+
+            if (Project1Button != null) {
+                Project1Button.Dispose ();
+                Project1Button = null;
             }
         }
     }

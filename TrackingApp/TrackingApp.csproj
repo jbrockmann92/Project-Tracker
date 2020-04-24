@@ -126,6 +126,10 @@
     <None Include="Entitlements.plist" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExpensesViewController.cs" />
+    <Compile Include="ExpensesViewController.designer.cs">
+      <DependentUpon>ExpensesViewController.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="MainViewController.cs" />
@@ -135,6 +139,10 @@
     <Compile Include="ProjectViewController.cs" />
     <Compile Include="ProjectViewController.designer.cs">
       <DependentUpon>ProjectViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReceiptsViewController.cs" />
+    <Compile Include="ReceiptsViewController.designer.cs">
+      <DependentUpon>ReceiptsViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="SceneDelegate.cs" />
   </ItemGroup>

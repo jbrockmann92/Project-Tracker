@@ -11,18 +11,18 @@ using UIKit;
 
 namespace TrackingApp
 {
-    [Register ("ExpensesViewController")]
-    partial class ExpensesViewController
+    [Register ("ReceiptsViewController")]
+    partial class ReceiptsViewController
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton AddExpenseButton { get; set; }
+        UIKit.UIButton AddReceiptsButton { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
-            if (AddExpenseButton != null) {
-                AddExpenseButton.Dispose ();
-                AddExpenseButton = null;
+            if (AddReceiptsButton != null) {
+                AddReceiptsButton.Dispose ();
+                AddReceiptsButton = null;
             }
         }
     }

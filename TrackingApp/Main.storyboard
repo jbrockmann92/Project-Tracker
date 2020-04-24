@@ -28,8 +28,10 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1401" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
                                 <rect key="frame" x="20" y="182" width="374" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.47450980392156861" green="0.63921568627450975" blue="0.54117647058823526" alpha="1"/>
-                                <state key="normal" title="Add Project"/>
+                                <color key="backgroundColor" colorSpace="calibratedRGB" red="1" green="1" blue="1" alpha="1"/>
+                                <state key="normal" title="Project 1">
+                                    <color key="titleColor" colorSpace="calibratedRGB" red="0" green="0" blue="0" alpha="1"/>
+                                </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute keyPath="layer.cornerRadius" type="number">
                                         <real key="value" value="5"/>
@@ -40,7 +42,7 @@
                     </view>
                     <connections>
                         <outlet property="Hello" destination="8bC-Xf-vdC" id="name-outlet-8bC-Xf-vdC"/>
-                        <outlet property="ClickButton" destination="1401" id="name-outlet-1401"/>
+                        <outlet property="Project1Button" destination="1401" id="name-outlet-1401"/>
                     </connections>
                     <navigationItem title="Title" id="2777" key="navigationItem"/>
                 </viewController>
@@ -74,11 +76,29 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3043" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="20" y="189" width="374" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" colorSpace="calibratedRGB" red="1" green="1" blue="1" alpha="1"/>
+                                <state key="normal" title="Expenses">
+                                    <color key="titleColor" colorSpace="calibratedRGB" red="0" green="0" blue="0" alpha="1"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3049" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="20" y="239" width="374" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" colorSpace="calibratedRGB" red="1" green="1" blue="1" alpha="1"/>
+                                <state key="normal" title="Receipts">
+                                    <color key="titleColor" colorSpace="calibratedRGB" red="0" green="0" blue="0" alpha="1"/>
+                                </state>
+                            </button>
                         </subviews>
                     </view>
                     <connections>
                         <outlet property="ProjectName" destination="1639" id="name-outlet-1639"/>
                         <outlet property="ProjectNumber" destination="3009" id="name-outlet-3009"/>
+                        <outlet property="ExpensesButton" destination="3043" id="name-outlet-3043"/>
+                        <outlet property="ReceiptsButton" destination="3049" id="name-outlet-3049"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1637" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -102,7 +122,7 @@
         </scene>
         <scene sceneID="3012">
             <objects>
-                <viewController id="3013" sceneMemberID="viewController" customClass="ExpensesViewController">
+                <viewController id="3013" sceneMemberID="viewController" customClass="ExpensesViewController" storyboardIdentifier="ExpensesViewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3010"/>
                         <viewControllerLayoutGuide type="bottom" id="3011"/>
@@ -126,8 +146,19 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3050" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="20" y="189" width="374" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" colorSpace="calibratedRGB" red="1" green="1" blue="1" alpha="1"/>
+                                <state key="normal" title="Add Expense">
+                                    <color key="titleColor" colorSpace="calibratedRGB" red="0" green="0" blue="0" alpha="1"/>
+                                </state>
+                            </button>
                         </subviews>
                     </view>
+                    <connections>
+                        <outlet property="AddExpenseButton" destination="3050" id="name-outlet-3050"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3015" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -135,7 +166,7 @@
         </scene>
         <scene sceneID="3021">
             <objects>
-                <viewController id="3022" sceneMemberID="viewController">
+                <viewController id="3022" sceneMemberID="viewController" customClass="ReceiptsViewController" storyboardIdentifier="ReceiptsViewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3019"/>
                         <viewControllerLayoutGuide type="bottom" id="3020"/>
@@ -159,8 +190,19 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3051" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="20" y="189" width="374" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" colorSpace="calibratedRGB" red="1" green="1" blue="1" alpha="1"/>
+                                <state key="normal" title="Add Receipt">
+                                    <color key="titleColor" colorSpace="calibratedRGB" red="0" green="0" blue="0" alpha="1"/>
+                                </state>
+                            </button>
                         </subviews>
                     </view>
+                    <connections>
+                        <outlet property="AddReceiptsButton" destination="3051" id="name-outlet-3051"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3024" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

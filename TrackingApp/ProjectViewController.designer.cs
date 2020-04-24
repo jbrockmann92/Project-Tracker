@@ -16,14 +16,27 @@ namespace TrackingApp
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton ExpensesButton { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel ProjectName { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel ProjectNumber { get; set; }
 
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton ReceiptsButton { get; set; }
+
         void ReleaseDesignerOutlets ()
         {
+            if (ExpensesButton != null) {
+                ExpensesButton.Dispose ();
+                ExpensesButton = null;
+            }
+
             if (ProjectName != null) {
                 ProjectName.Dispose ();
                 ProjectName = null;
@@ -32,6 +45,11 @@ namespace TrackingApp
             if (ProjectNumber != null) {
                 ProjectNumber.Dispose ();
                 ProjectNumber = null;
+            }
+
+            if (ReceiptsButton != null) {
+                ReceiptsButton.Dispose ();
+                ReceiptsButton = null;
             }
         }
     }
