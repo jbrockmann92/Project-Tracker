@@ -35,8 +35,7 @@ namespace TrackingApp
 
         private async Task GetProjects()
         {
-            var response = await client.GetAsync("https://jsonplaceholder.typicode.com/todos");
-            projectsJSON = await response.Content.ReadAsStringAsync();
+            projectsJSON = await client.GetStringAsync("https://localhost:44307/api/home");
         }
 
         public void ReceiptsButton_TouchUpInside(object sender, EventArgs e)
