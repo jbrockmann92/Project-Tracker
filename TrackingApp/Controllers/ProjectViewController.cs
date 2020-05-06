@@ -13,29 +13,29 @@ namespace TrackingApp
     public partial class ProjectViewController : UIViewController
     {
         HttpClient client = new HttpClient();
-        string projectsJSON = "";
+        Project project = new Project();
 
         public ProjectViewController (IntPtr handle) : base (handle)
         {
         }
 
-        public async override void ViewDidLoad()
+        public override void ViewDidLoad()
         {
             base.ViewDidLoad();
 
-            await GetProjects();
+            GetProjects();
             //var jsonResponse = JsonSerializer.Deserialize<Weather>(projectsJSON);
 
-            Console.WriteLine(projectsJSON);
+            Console.WriteLine(project);
 
             ProjectName.Text = "This Project"; //Can change to the right name here. When API call is working and JSON is formatted correctly
             ReceiptsButton.TouchUpInside += ReceiptsButton_TouchUpInside;
             ExpensesButton.TouchUpInside += ExpensesButton_TouchUpInside;
         }
 
-        private async Task GetProjects()
+        private void GetProjects()
         {
-            projectsJSON = await client.GetStringAsync("https://localhost:44307/api/home");
+            project = JsonSerializer.Deserialize<Project>("{\"id\":1,\"title\":\"Roof\",\"mileage\":45.0,\"budget\":5000.0,\"budgetUsed\":1300.0,\"expense\":{\"id\":1,\"title\":\"Shingles\",\"cost\":25.0,\"projectId\":1},\"hoursSpent\":{\"id\":1,\"name\":\"Jacob\",\"hours\":5.0,\"projectId\":1},\"receipt\":{\"id\":1,\"store\":\"Menards\",\"total\":100.0,\"projectId\":1},\"note\":{\"id\":1,\"title\":\"New Note\",\"text\":\"This one is good\",\"projectId\":1}}"); //Need to deserialize that JSON to a project. Might be able to get away with just instantiating a project or two. How?
         }
 
         public void ReceiptsButton_TouchUpInside(object sender, EventArgs e)
