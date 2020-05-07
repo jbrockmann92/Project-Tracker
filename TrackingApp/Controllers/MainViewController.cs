@@ -36,19 +36,18 @@ namespace TrackingApp
             for (int i = 0; i < projects.Count; i++)
             {
                 UIButton newButton = UIButton.FromType(UIButtonType.System);
+                Project projectToLoad = projects[i];
                 newButton.Frame = new CGRect(35, (200 + (i * 35)), 325, 30);
                 newButton.BackgroundColor = UIColor.Red;
                 newButton.SetTitle(projects[i].Title, UIControlState.Normal);
-                newButton.TouchUpInside += Project1Button_TouchUpInside;
+                newButton.TouchUpInside += (sender, e) =>
+                {
+                    ProjectViewController project = this.Storyboard.InstantiateViewController("ProjectViewController") as ProjectViewController;
+                    project.project = projectToLoad;
+                    this.NavigationController.PushViewController(project, true); //Want to pass in the entire project to the ProjectViewController somehow so I can use the data there
+                };
                 View.Add(newButton);
             }
         }
-
-        public void Project1Button_TouchUpInside(object sender, EventArgs e)
-        {
-            ProjectViewController project = this.Storyboard.InstantiateViewController("ProjectViewController") as ProjectViewController;
-            this.NavigationController.PushViewController(project, true);
-        }
-
     }
 }
