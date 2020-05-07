@@ -18,20 +18,11 @@ namespace TrackingApp
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIView Hello { get; set; }
 
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton Project1Button { get; set; }
-
         void ReleaseDesignerOutlets ()
         {
             if (Hello != null) {
                 Hello.Dispose ();
                 Hello = null;
-            }
-
-            if (Project1Button != null) {
-                Project1Button.Dispose ();
-                Project1Button = null;
             }
         }
     }
