@@ -26,7 +26,7 @@ namespace TrackingApp
         {
             base.ViewDidLoad();
 
-            string stringJSON = "[{\"id\":1,\"title\":\"Roof\",\"mileage\":45.0,\"budget\":5000.0,\"budgetUsed\":1300.0,\"expense\":{\"id\":1,\"title\":\"Shingles\",\"cost\":25.0,\"projectId\":1},\"hoursSpent\":{\"id\":1,\"name\":\"Jacob\",\"hours\":5.0,\"projectId\":1},\"receipt\":{\"id\":1,\"store\":\"Menards\",\"total\":100.0,\"projectId\":1},\"note\":{\"id\":1,\"title\":\"New Note\",\"text\":\"This one is good\",\"projectId\":1}}, {\"id\":2,\"title\":\"Janesville House\",\"mileage\":45.0,\"budget\":5000.0,\"budgetUsed\":1300.0,\"expense\":{\"id\":1,\"title\":\"Shingles\",\"cost\":25.0,\"projectId\":1},\"hoursSpent\":{\"id\":1,\"name\":\"Jacob\",\"hours\":5.0,\"projectId\":1},\"receipt\":{\"id\":1,\"store\":\"Menards\",\"total\":100.0,\"projectId\":1},\"note\":{\"id\":1,\"title\":\"New Note\",\"text\":\"This one is good\",\"projectId\":1}}]";
+            string stringJSON = "[{\"id\":1,\"title\":\"Roof\",\"mileage\":45.0,\"budget\":5000.0,\"budgetUsed\":1300.0}, [\"expenses\":{\"id\":1,\"title\":\"Shingles\",\"cost\":25.0,\"projectId\":1}],[\"hoursSpent\":{\"id\":1,\"name\":\"Jacob\",\"hours\":5.0,\"projectId\":1}],[\"receipts\":{\"id\":1,\"store\":\"Menards\",\"total\":100.0,\"projectId\":1}],[\"notes\":{\"id\":1,\"title\":\"New Note\",\"text\":\"This one is good\",\"projectId\":1}}], {\"id\":2,\"title\":\"Janesville House\",\"mileage\":45.0,\"budget\":5000.0,\"budgetUsed\":1300.0,[\"expenses\":{\"id\":1,\"title\":\"Shingles\",\"cost\":25.0,\"projectId\":1}],[\"hoursSpent\":{\"id\":1,\"name\":\"Jacob\",\"hours\":5.0,\"projectId\":1}],[\"receipts\":{\"id\":1,\"store\":\"Menards\",\"total\":100.0,\"projectId\":1}],[\"notes\":{\"id\":1,\"title\":\"New Note\",\"text\":\"This one is good\",\"projectId\":1}]}]";
             projects = JsonConvert.DeserializeObject<List<Project>>(stringJSON);
 
 
@@ -37,8 +37,8 @@ namespace TrackingApp
             {
                 UIButton newButton = UIButton.FromType(UIButtonType.System);
                 Project projectToLoad = projects[i];
-                newButton.Frame = new CGRect(35, (200 + (i * 35)), 325, 30);
-                newButton.BackgroundColor = UIColor.Red;
+                newButton.Frame = new CGRect(35, (200 + (i * 35)), 350, 30);
+                newButton.BackgroundColor = UIColor.White;
                 newButton.SetTitle(projects[i].Title, UIControlState.Normal);
                 newButton.TouchUpInside += (sender, e) =>
                 {

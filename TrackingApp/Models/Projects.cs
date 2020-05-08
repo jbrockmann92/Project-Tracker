@@ -17,9 +17,9 @@ namespace TrackingApp.Models
         public float Mileage { get; set; }
         public float Budget { get; set; }
         public float BudgetUsed { get; set; }
-        public Expense Expense { get; set; }
-        public HoursSpent HoursSpent { get; set; }
-        public Receipt Receipt { get; set; }
-        public Note Note { get; set; }
+        public List<Expense> Expenses { get; set; } //Remember to change these to lists in the API as well
+        public List<HoursSpent> HoursSpent { get; set; }
+        public List<Receipt> Receipts { get; set; }
+        public List<Note> Notes { get; set; }
     }
 }

@@ -10,11 +10,11 @@ namespace TrackingApp.Models
     public class Expense
     {
         //[Key]
-        //public int Id { get; set; }
-        //public string Title { get; set; }
-        //public float Cost { get; set; }
+        public int Id { get; set; }
+        public string Title { get; set; }
+        public float Cost { get; set; }
         //[ForeignKey("Project")]
-        //public int ProjectId { get; set; }
-        //public Project Project { get; set; }
+        public int ProjectId { get; set; }
+        public Project Project { get; set; }
     }
 }
