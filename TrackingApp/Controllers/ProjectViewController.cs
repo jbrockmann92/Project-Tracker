@@ -14,18 +14,10 @@ namespace TrackingApp
 {
     public partial class ProjectViewController : UIViewController
     {
-        public Project project = new Project(); //Ideally I want to assign this in the constructor so I can leave it private. But I can worry about that later
-        List<Expense> expenses = new List<Expense>();
-        List<HoursSpent> hours = new List<HoursSpent>();
-        List<Note> notes = new List<Note>();
-        List<Receipt> receipts = new List<Receipt>();
+        public Project project = new Project(); //Need to get from the api again? Should be able t
 
         public ProjectViewController (IntPtr handle) : base (handle)
         {
-            expenses = project.Expenses;
-            hours = project.HoursSpent;
-            notes = project.Notes;
-            receipts = project.Receipts;
         }
 
         public override void ViewDidLoad()
@@ -44,14 +36,14 @@ namespace TrackingApp
         public void ReceiptsButton_TouchUpInside(object sender, EventArgs e)
         {
             ReceiptsViewController receiptsController = this.Storyboard.InstantiateViewController("ReceiptsViewController") as ReceiptsViewController;
-            receiptsController.receipts = receipts;
+            receiptsController.receipts = project.Receipts;
             this.NavigationController.PushViewController(receiptsController, true);
         }
 
         public void ExpensesButton_TouchUpInside(object sender, EventArgs e)
         {
             ExpensesViewController expensesController = this.Storyboard.InstantiateViewController("ExpensesViewController") as ExpensesViewController;
-            expensesController.expenses = expenses;
+            expensesController.expenses = project.Expenses;
             expensesController.Title = project.Title;
             this.NavigationController.PushViewController(expensesController, true);
         }
