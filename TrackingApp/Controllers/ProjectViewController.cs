@@ -9,6 +9,9 @@ using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using ProjectAPI.Models;
 using System.Collections.Generic;
+using Microsoft.Data.SqlClient.DataClassification;
+using System.Drawing.Imaging;
+using CoreGraphics;
 
 namespace TrackingApp
 {
@@ -31,6 +34,15 @@ namespace TrackingApp
 
             ReceiptsButton.TouchUpInside += ReceiptsButton_TouchUpInside;
             ExpensesButton.TouchUpInside += ExpensesButton_TouchUpInside;
+
+            for (int i = 0; i < project.Notes.Count; i++)
+            {
+                UILabel label = new UILabel();
+                label.Text = project.Notes[i].Title + project.Notes[i].Text;
+                label.Frame = new CGRect(41, (396 + (45 * (i + 1))), 353, 21);
+
+                View.Add(label);
+            }
         }
 
         public void ReceiptsButton_TouchUpInside(object sender, EventArgs e)

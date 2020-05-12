@@ -28,6 +28,10 @@ namespace TrackingApp
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel NotesHeader { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel ProjectName { get; set; }
 
         [Outlet]
@@ -53,6 +57,11 @@ namespace TrackingApp
             if (Mileage != null) {
                 Mileage.Dispose ();
                 Mileage = null;
+            }
+
+            if (NotesHeader != null) {
+                NotesHeader.Dispose ();
+                NotesHeader = null;
             }
 
             if (ProjectName != null) {

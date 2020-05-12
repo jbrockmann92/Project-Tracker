@@ -8,12 +8,17 @@ namespace TrackingApp
 {
     public partial class ReceiptsViewController : UIViewController
     {
-        public List<Receipt> receipts = new List<Receipt>();
+        public List<Receipt> receipts;
 
         public ReceiptsViewController (IntPtr handle) : base (handle)
         {
         }
 
+        public override void ViewDidLoad()
+        {
+            base.ViewDidLoad();
 
+
+        }
     }
 }
