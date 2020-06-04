@@ -1,16 +1,6 @@
-using Foundation;
 using System;
-using System.Net;
-using System.Net.Http;
 using UIKit;
 using TrackingApp.Models;
-using System.Text.Json;
-using System.Text.Json.Serialization;
-using System.Threading.Tasks;
-using ProjectAPI.Models;
-using System.Collections.Generic;
-using Microsoft.Data.SqlClient.DataClassification;
-using System.Drawing.Imaging;
 using CoreGraphics;
 
 namespace TrackingApp
